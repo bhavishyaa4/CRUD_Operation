@@ -1,0 +1,32 @@
+.start{
+    background-color: rgb(220, 235, 8);
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: larger;
+    font-weight: bolder;
+    
+}
+th{
+    background-color: rgb(21, 165, 184);
+    margin-top: 5%;
+   font-size: larger;
+}
+td{
+    background-color: rgb(215, 104, 230);
+    font-size: larger;
+}
+.show{
+    margin-top: 2%;
+    margin-left: 11%;
+}
+.update{
+    background-color: blue;
+    font-weight: bolder;
+}
+.delete{
+    background-color:red;
+    font-weight: bolder;
+}
+a{
+    color: white;
+}
