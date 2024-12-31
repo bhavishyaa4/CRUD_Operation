@@ -7,10 +7,10 @@ if(isset($_POST['submit'])){
     $mobile=$_POST['mobile'];
     $password=$_POST['password'];
     $error = array();
-    $u = "SELECT email FROM CURD WHERE email = '$email'";
-    $uu = mysqli_query($con,$u);
+    $u = "SELECT email FROM CRUD WHERE email = '$email'";
+    $uu = mysqli_query($conn,$u);
     if(empty($name)){
-        $error['rname'] = "Username Is Required!!";
+        $error['rname'] = "Name Is Required!!";
     }
     if(empty($email)){
         $error['remail'] = "Email Is Required!!";
@@ -25,8 +25,8 @@ if(isset($_POST['submit'])){
     $error['rpassword'] = "Password Is Required!!";
 }
   if(count($error) == 0){
-    $sql="insert into  `CURD` (name,email,address,mobile,password) values('$name','$email', '$address', '$mobile', '$password')";
-    $result=mysqli_query($con,$sql);
+    $sql="insert into  `CRUD` (name,email,address,mobile,password) values('$name','$email', '$address', '$mobile', '$password')";
+    $result=mysqli_query($conn,$sql);
     if($result){
         // echo "DATA HAS BEEN INSERTED SUCESSFULLY..";
         header('location:show.php');
@@ -41,8 +41,8 @@ if(isset($_POST['submit'])){
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRUD OPERATION</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ADD USER | CRUD</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="container">
@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
   <div class="form-group">
     <label>NAME</label>
     <input type="text" class="form-control" placeholder="ENTER YOUR NAME" name="name" autocomplete="off" value="">
-    <p class="require">
+    <p class="require" style="color: red;">
             <?php
             if(isset($error['rname'])){
                 echo $error['rname'];
@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
 <div class="form-group">
     <label>EMAIL</label>
     <input type="email" class="form-control" placeholder="ENTER YOUR EMAIL" name="email"autocomplete="off"value="">
-    <p class="require">
+    <p class="require" style="color: red;">
             <?php
             if(isset($error['remail'])){
                 echo $error['remail'];
@@ -72,8 +72,8 @@ if(isset($_POST['submit'])){
 </div>
 <div class="form-group">
     <label>ADDRESS</label>
-    <input type="text" class="form-control" placeholder="ENTER YOUR ADDRESS" name="address"autocomplete="off">
-    <p class="require">
+    <input type="text" class="form-control" placeholder="ENTER YOUR ADDRESS" name="address" autocomplete="off">
+    <p class="require" style="color: red;">
             <?php
             if(isset($error['raddress'])){
                 echo $error['raddress'];
@@ -84,7 +84,7 @@ if(isset($_POST['submit'])){
 <div class="form-group">
     <label>MOBILE</label>
     <input type="text" class="form-control" placeholder="ENTER YOUR NUMBER" name="mobile"autocomplete="off"value="">
-    <p class="require">
+    <p class="require" style="color: red;">
             <?php
             if(isset($error['rmobile'])){
                 echo $error['rmobile'];
@@ -95,7 +95,7 @@ if(isset($_POST['submit'])){
 <div class="form-group">
     <label>PASSWORD</label>
     <input type="password" class="form-control" placeholder="ENTER YOUR PASSWORD" name="password"autocomplete="off">
-    <p class="require">
+    <p class="require" style="color: red;">
             <?php
             if(isset($error['rpassword'])){
                 echo $error['rpassword'];

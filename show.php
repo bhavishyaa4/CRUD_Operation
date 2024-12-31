@@ -7,7 +7,7 @@ include 'link.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CURD OPERATION</title>
+    <title>SHOW | ADD | CRUD </title>
     <link rel="stylesheet" href="show.css">
 </head>
 <body>
@@ -27,15 +27,15 @@ include 'link.php';
   </thead>
   <tbody>
     <?php
-            $sql="Select * from `CURD`";
-            $result=mysqli_query($con,$sql);
+            $sql="Select * from `CRUD`";
+            $result=mysqli_query($conn,$sql);
             if($result){
                while($row=mysqli_fetch_assoc($result)){
-                $id=$row['ID'];
-                $name=$row['NAME'];
-                $email=$row['EMAIL'];
-                $address=$row['ADDRESS'];
-                $mobile=$row['MOBILE'];
+                $id=$row['id'];
+                $name=$row['name'];
+                $email=$row['email'];
+                $address=$row['address'];
+                $mobile=$row['mobile'];
                 // $password=$row['PASSWORD'];
                 echo '<tr>
                 <th>'.$id.'</th>
